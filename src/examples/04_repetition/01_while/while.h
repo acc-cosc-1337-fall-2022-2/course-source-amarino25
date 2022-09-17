@@ -1,5 +1,5 @@
 #include<string>
-
+bool num_in_range_1_10(int num);
 //Write function prototype named sum_of_squares that accepts an int and returns an int.
 
 
