@@ -5,6 +5,16 @@
 using std::cout;
 using std::cin;
 
+    // Enter 1 2 3
+	// cin >> choice
+	// switch(choice)
+	// case 1 : using if
+	//	Letter Grade: 
+	// 	cin >> grade
+	//	using if
+	// exit
+	// case 2 : using switch
+	// case 3 : exit
 int main() 
 {
 	std::cout<<"1. Letter grade using if \n";
@@ -26,7 +36,8 @@ int main()
 		auto letterGrade = get_letter_grade_using_if(grade);
 
 		cout<<"Letter grade is: "<<letterGrade << "\n";
-		} else if (choice == 2) {
+		} 
+		 else if (choice == 2) {
 
 		auto letterGrade = get_letter_grade_using_switch(grade);
 
@@ -38,17 +49,4 @@ int main()
 	return 0;
 	}
 
-	// Enter 1 2 3
-	// cin >> choice
-	// switch(choice)
-	// case 1 : using if
-	//	Letter Grade: 
-	// 	cin >> grade
-	//	using if
-	// exit
-	// 
-	// case 2 : using switch
-	// case 3 : exit
-
-	
 }

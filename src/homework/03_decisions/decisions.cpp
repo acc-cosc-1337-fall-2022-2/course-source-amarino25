@@ -40,11 +40,7 @@ std::string get_letter_grade_using_if(int grade)
     return letterGrade;
 }
 // Wrtie code using switch
-//returns 'A' when value is between 90 and 100
-//returns 'B' when value is between 80 and 89
-//returns 'C' when value is between 70 and 79
-//returns 'D' when value is between 60 and 69
-//returns 'F' when value is between 00 and 59
+
 
 std::string get_letter_grade_using_switch(int grade)
 {
