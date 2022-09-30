@@ -43,10 +43,10 @@ int main()
 
 		cout<<"Letter grade is: "<<letterGrade << "\n";
 		}
-}
-	case 3:
-	cout<< "Goodbye";
-	return 0;
+	}
+		case 3:
+		cout<< "Goodbye";
+		return 0;
 	}
 
 }
