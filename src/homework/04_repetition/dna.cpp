@@ -8,10 +8,11 @@ using std::cin;
 //add function(s) code here
 int factorial(int num)
 {
-    int factorial = 0;
+    int factorial = num;
+    num--;
     while(num>0)
     {
-        factorial += num * num;
+        factorial *= num;
         num--;
     
     }
