@@ -28,24 +28,26 @@ int main()
 		std::cout<<"3. Exit \n";
 		std::cout<<"\n Choose a function: ";
 		std::cin>>choice;
+		string dna_string = "";
 
 		switch(choice)
 		{
 			case 1:
 			{
-				const string& dna;
-				std::cout<<" Enter a DNA string: ";
-				std::cin>>;
+				std::cout<<" Enter a DNA string to get the GC content: ";
+				std::cin>>dna_string;
+				std::cout<<"The GC content from the DNA string " <<dna_string<<" is" <<get_gc_content(dna_string)<<"\n\\n";
+
 				
 				
 			}
 			break;
 			case 2:
 			{
-				string dna;
-				std::cout<<"Enter a DNA string: ";
-				std::cin>>;
-				;
+				
+				std::cout<<"Enter a DNA string to get the DNA complement: ";
+				std::cin>> dna_string;
+				std::cout<<"The DNA Complement from the DNA string " <<dna_string<< "is" <<get_dna_complement(dna_string)<< "\n\\n";
 			}
 			break;
 			case 3:
