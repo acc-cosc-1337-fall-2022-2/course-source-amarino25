@@ -8,38 +8,49 @@ using std::cin;
 
 int main() 
 {
+	
 	tic_tac_toe game;
 	string first_player;
 	int position;
-	bool loop_againl
+	bool loop_again = true;
+	
 
-	do
+	while (loop_again)
 	{
-		cout<<"Enter X or O:";
-		cin>>first_player;
-	while(first_player!="X"&&first_player!="O")
-	{
-		cout<<"Invalid try again"<<"\n";
-		cout<<"Enter X or O:";
-		cin>> first_player 
+		do
+		{
+			cout<<"Enter X or O:";
+			cin>>first_player;
+		}
+		while(first_player!="X" && first_player!="O");
+
+		game.start_game(first_player);
+		
+		do
+		{
+			game.display_board();
+			cout<<"Enter a number from 1 to 9:";
+			cin>>position;
+
+			game.mark_board(position);
+		
+		} 
+		while(game.game_over()==false);
+
+		game.display_board();
+
+		string choice = "";
+		do
+		{
+		cout<<"Play again(Y for yes N for no)";
+		cin>>choice;		
+		loop_again = choice == "Y";
+		}
+		while(choice!="Y"&&choice!="N");
 	}
-	start_game(first_player);
-
-	do
-	{
-		display_board();
-		cout<<"Enter a number form 1 to 9:";
-		cin>>position;
-
-		mark_board(position);
 	
-	} 
-	while(game_over()==false);
-	display_board();
 
-	cout<<"Play again(1 for yes 0 for no)";
-	cin>>loop_again;
-	
-	
 	return 0;
+	
+	
 }
