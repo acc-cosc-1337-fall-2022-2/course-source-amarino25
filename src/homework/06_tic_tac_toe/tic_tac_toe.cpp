@@ -12,7 +12,40 @@ using std::cin;
 
 bool tic_tac_toe::game_over()
 {
-    return check_board_full();
+    
+    if(check_row_win())
+    {
+        set_winner();
+        winner = get_winner();
+        cout<<winner<<" Wins";
+        return true;
+    }
+
+    if(check_column_win())
+    {
+        set_winner();
+        winner = get_winner();
+        cout<<winner<<" Wins\n";
+        return true;
+    }
+
+    if(check_diagonal_win())
+    {
+        set_winner();
+        winner = get_winner();
+        cout<<winner<<" Wins\n";
+        return true;
+    }
+
+    if(check_board_full())
+    {
+        set_winner();
+        winner = "C";
+        cout<<winner<<" Tie game\n";
+        return true;
+    }
+    
+    return false;
 }
 
 void tic_tac_toe::start_game(std::string first_player)
@@ -41,6 +74,82 @@ void tic_tac_toe:: display_board() const
                
     cout<<output;
 }
+
+std::string tic_tac_toe::get_winner()
+{
+    return winner;
+}
+
+bool tic_tac_toe::check_column_win()
+{
+    
+    if(pegs[0]!= " " && pegs[3] == pegs[0] && pegs[6] == pegs[0])
+    {
+        return true;
+    }
+
+    if(pegs[1]!= " " && pegs[4] == pegs[1] && pegs[7] == pegs[1])
+    {
+        return true;
+    }
+
+    if(pegs[2]!= " " && pegs[5] == pegs[2] && pegs[8] == pegs[2])
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool tic_tac_toe::check_row_win()
+{
+    if(pegs[0]!= " " && pegs[1] == pegs[0] && pegs[2] == pegs[0])
+    {
+        return true;
+    }
+
+    if(pegs[3]!= " " && pegs[4] == pegs[3] && pegs[5] == pegs[3])
+    {
+        return true;
+    }
+
+    if(pegs[6]!= " " && pegs[7] == pegs[6] && pegs[8] == pegs[6])
+    {
+        return true;
+    }
+
+    return false;
+}
+    
+bool tic_tac_toe::check_diagonal_win()
+{
+    if(pegs[0]!= " " && pegs[4] == pegs[0] && pegs[8] == pegs[0])
+    {
+        return true;
+    }
+
+    if(pegs[6]!= " " && pegs[4] == pegs[6] && pegs[2] == pegs[6])
+    {
+        return true;
+    }
+
+    return false;
+}
+
+void tic_tac_toe::set_winner()
+{
+    if(player =="X")
+    {
+        winner = "O";
+    }
+    else
+    {
+        winner = "X";
+    }
+}
+
+
+
 
 void tic_tac_toe::set_next_player()
 {
