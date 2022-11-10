@@ -65,16 +65,6 @@ std::string tic_tac_toe::get_player()const
     return player;
 }
 
-void tic_tac_toe:: display_board() const
-{
-    string output = "";
-    output = pegs.at(0) + "|" + pegs.at(1) + "|" + pegs.at(2) + "\n"
-           + pegs.at(3) + "|" + pegs.at(4) + "|" + pegs.at(5) + "\n"
-           + pegs.at(6) + "|" + pegs.at(7) + "|" + pegs.at(8) + "\n";
-               
-    cout<<output;
-}
-
 std::string tic_tac_toe::get_winner()
 {
     return winner;
@@ -178,4 +168,15 @@ bool tic_tac_toe::check_board_full()
 void tic_tac_toe::clear_board()
 {
     pegs = {" "," "," "," "," "," "," "," "," "};
+}
+
+//friend
+std::ostream& operator<<(std::ostream& out, const tic_tac_toe& game)
+{
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, tic_tac_toe& game)
+{
+    return in;
 }
