@@ -16,32 +16,28 @@ bool tic_tac_toe::game_over()
     if(check_row_win())
     {
         set_winner();
-        winner = get_winner();
-        cout<<winner<<" Wins";
+        cout<<"Game Over, "<<winner<<" Wins";
         return true;
     }
 
     if(check_column_win())
     {
         set_winner();
-        winner = get_winner();
-        cout<<winner<<" Wins\n";
+        cout<<"Game Over, "<<winner<<" Wins\n";
         return true;
     }
 
     if(check_diagonal_win())
     {
         set_winner();
-        winner = get_winner();
-        cout<<winner<<" Wins\n";
+        cout<<"Game Over, "<<winner<<" Wins\n";
         return true;
     }
 
     if(check_board_full())
     {
-        set_winner();
         winner = "C";
-        cout<<winner<<" Tie game\n";
+        cout<<"Game Over, it's a tie!\n";
         return true;
     }
     
@@ -173,10 +169,25 @@ void tic_tac_toe::clear_board()
 //friend
 std::ostream& operator<<(std::ostream& out, const tic_tac_toe& game)
 {
+    out << game.pegs[0] << "|" << game.pegs[1] << "|" << game.pegs[2] << "\n"
+    << "-----\n"
+    << game.pegs[3] << "|" << game.pegs[4] << "|" << game.pegs[5] << "\n"
+    << "-----\n"
+    << game.pegs[6] << "|" << game.pegs[7] << "|" << game.pegs[8] << "\n";
+
     return out;
 }
 
 std::istream& operator>>(std::istream& in, tic_tac_toe& game)
 {
+    int position = 0;
+
+    cout <<game.get_player()<<" turn. Enter a number from 1 to 9:"; 
+    in >> position;
+
+    game.mark_board(position);
+
+    cout << game;
+
     return in;
 }

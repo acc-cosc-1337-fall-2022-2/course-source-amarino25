@@ -11,9 +11,10 @@ int main()
 {
 	
 	tic_tac_toe game;
-	TicTacToeManager game;
+	TicTacToeManager manager;
 	string first_player;
 	bool loop_again = true;
+	int position;
 	
 	
 
@@ -21,40 +22,37 @@ int main()
 	{
 		do
 		{
-			
-		while(first_player!="X" && first_player!="O")
-		{
-			cout<<"Enter X or O:";
-			cin>>first_player;
+			cout << "Enter X or O:";
+			cin >> first_player;
 		}
-
+		while (first_player!="X" && first_player!="O");
+		
 		game.start_game(first_player);
 		
 		do
-		{
-			cin>>tic_tac_toe;
-			cout<<tic_tac_toe;
-		
+		{			
+			cin >> game;		
 		} 
-		while(game.game_over()==false);
-
-		std::cout<<"Game Over \n";
-		first_player = "";
+		while (game.game_over() == false);
+		
 		manager.save_game(game);
 
 		int o,x,t;
-		manager.get_winnter_totals(x,o,t);
+		manager.get_winner_totals(o,x,t);
+
+		cout << "X wins: " << x << " | O wins: " << o << " | Ties: " << t << "\n";
 
 		string choice ="";
 		do
 		{
-		cout<<"Play again(Y for yes N for no)";
-		cin>>choice;		
+		cout << "Play again(Y for yes N for no)";
+		cin >> choice;		
 		loop_again = choice == "Y";
 		}
-		while(choice!="Y"&&choice!="N");
+		while (choice!= "Y"&&choice!="N");
 	}
 	
+	cout << "Final game history\n" << manager;
 
 	return 0;
 	
