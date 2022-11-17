@@ -9,18 +9,23 @@ using std::vector;
 using std::cout;
 using std::cin;
 
-void TicTacToeManager::save_game(tic_tac_toe b)
+void TicTacToeManager::save_game(std::unique_ptr<tic_tac_toe>& b)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+    update_winner_count(b->get_winner());
+    games.emplace_back();
+    games.back() = std::move(b);
 }
 
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
 {
     for(int i=0; i < manager.games.size(); i++)
     {
-        out << "Game " << i+1 << "\n" << manager.games[i] << "\n";
+        auto& game = manager.games[i];
+
+        out << "Game " << i+1 << "\n" << *game << "\n";
     }
+
+    return out;
 }
 
 void TicTacToeManager::get_winner_totals(int& o, int& x, int& t)

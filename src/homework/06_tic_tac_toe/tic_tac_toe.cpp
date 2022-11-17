@@ -10,6 +10,10 @@ using std::vector;
 using std::cout;
 using std::cin;
 
+tic_tac_toe::tic_tac_toe(int size): pegs(size*size, " ")
+{
+}
+
 bool tic_tac_toe::game_over()
 {
     
@@ -68,57 +72,16 @@ std::string tic_tac_toe::get_winner()
 
 bool tic_tac_toe::check_column_win()
 {
-    
-    if(pegs[0]!= " " && pegs[3] == pegs[0] && pegs[6] == pegs[0])
-    {
-        return true;
-    }
-
-    if(pegs[1]!= " " && pegs[4] == pegs[1] && pegs[7] == pegs[1])
-    {
-        return true;
-    }
-
-    if(pegs[2]!= " " && pegs[5] == pegs[2] && pegs[8] == pegs[2])
-    {
-        return true;
-    }
-
     return false;
 }
 
 bool tic_tac_toe::check_row_win()
 {
-    if(pegs[0]!= " " && pegs[1] == pegs[0] && pegs[2] == pegs[0])
-    {
-        return true;
-    }
-
-    if(pegs[3]!= " " && pegs[4] == pegs[3] && pegs[5] == pegs[3])
-    {
-        return true;
-    }
-
-    if(pegs[6]!= " " && pegs[7] == pegs[6] && pegs[8] == pegs[6])
-    {
-        return true;
-    }
-
     return false;
 }
     
 bool tic_tac_toe::check_diagonal_win()
 {
-    if(pegs[0]!= " " && pegs[4] == pegs[0] && pegs[8] == pegs[0])
-    {
-        return true;
-    }
-
-    if(pegs[6]!= " " && pegs[4] == pegs[6] && pegs[2] == pegs[6])
-    {
-        return true;
-    }
-
     return false;
 }
 
@@ -169,11 +132,24 @@ void tic_tac_toe::clear_board()
 //friend
 std::ostream& operator<<(std::ostream& out, const tic_tac_toe& game)
 {
-    out << game.pegs[0] << "|" << game.pegs[1] << "|" << game.pegs[2] << "\n"
-    << "-----\n"
-    << game.pegs[3] << "|" << game.pegs[4] << "|" << game.pegs[5] << "\n"
-    << "-----\n"
-    << game.pegs[6] << "|" << game.pegs[7] << "|" << game.pegs[8] << "\n";
+    if (game.pegs.size() == 9)
+    {
+        out << game.pegs[0] << "|" << game.pegs[1] << "|" << game.pegs[2] << "\n"
+        << "-----\n"
+        << game.pegs[3] << "|" << game.pegs[4] << "|" << game.pegs[5] << "\n"
+        << "-----\n"
+        << game.pegs[6] << "|" << game.pegs[7] << "|" << game.pegs[8] << "\n";
+    }
+    else
+    {
+        out << game.pegs[0] << "|" << game.pegs[1] << "|" << game.pegs[2] << "|" << game.pegs[3] << "\n"
+        << "-----\n"
+        << game.pegs[4] << "|" << game.pegs[5] << "|" << game.pegs[6] << "|" << game.pegs[7] << "\n"
+        << "-----\n"
+        << game.pegs[8] << "|" << game.pegs[9] << "|" << game.pegs[10] << "|" << game.pegs[11] << "\n"
+        << "-----\n"
+        << game.pegs[12] << "|" << game.pegs[13] << "|" << game.pegs[14] << "|" << game.pegs[15] << "\n";
+    }
 
     return out;
 }
@@ -182,7 +158,7 @@ std::istream& operator>>(std::istream& in, tic_tac_toe& game)
 {
     int position = 0;
 
-    cout <<game.get_player()<<" turn. Enter a number from 1 to 9:"; 
+    cout <<game.get_player()<<" turn. Enter a number from 1 " << game.pegs.size() << ":"; 
     in >> position;
 
     game.mark_board(position);

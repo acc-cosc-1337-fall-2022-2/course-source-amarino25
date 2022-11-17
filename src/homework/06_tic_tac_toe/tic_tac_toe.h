@@ -19,17 +19,20 @@ class tic_tac_toe
     void mark_board(int position);
     std::string get_player()const;
     std::string get_winner();
+    tic_tac_toe(int size);
+
+    protected:
+    std::vector<std::string> pegs;
+    virtual bool check_column_win();
+    virtual bool check_row_win();
+    virtual bool check_diagonal_win();
 
     private:
-    bool check_column_win();
-    bool check_row_win();
-    bool check_diagonal_win();
     void set_winner();
     void set_next_player();
     bool check_board_full();
     void clear_board();
     std::string player;
-    std::vector<std::string>pegs = {" "," "," "," "," "," "," "," "," "};
     std::string winner;
 };
 

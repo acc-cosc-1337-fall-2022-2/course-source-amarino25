@@ -2,6 +2,8 @@
 #include<iostream>
 #include<string>
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 using std::string;
 using std::cout;
@@ -10,7 +12,7 @@ using std::cin;
 int main() 
 {
 	
-	tic_tac_toe game;
+	std::unique_ptr<tic_tac_toe> game;
 	TicTacToeManager manager;
 	string first_player;
 	bool loop_again = true;
@@ -20,6 +22,22 @@ int main()
 
 	while (loop_again)
 	{
+		string game_type = "";
+		do
+		{
+			cout << "Enter 3 to play Tic Tac Toe 3 or 4 to play Tic Tac Toe 4: ";
+			cin >> game_type;
+		} while(game_type != "3" && game_type != "4");
+
+		if (game_type == "3")
+		{
+			game = std::make_unique<Tic_Tac_Toe_3>();
+		}
+		else
+		{
+			game = std::make_unique<Tic_Tac_Toe_4>();
+		}
+
 		do
 		{
 			cout << "Enter X or O:";
@@ -27,13 +45,13 @@ int main()
 		}
 		while (first_player!="X" && first_player!="O");
 		
-		game.start_game(first_player);
+		game->start_game(first_player);
 		
 		do
 		{			
-			cin >> game;		
+			cin >> *game;		
 		} 
-		while (game.game_over() == false);
+		while (game->game_over() == false);
 		
 		manager.save_game(game);
 
