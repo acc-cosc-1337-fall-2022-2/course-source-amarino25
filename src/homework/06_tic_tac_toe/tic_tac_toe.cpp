@@ -126,7 +126,10 @@ bool tic_tac_toe::check_board_full()
 }
 void tic_tac_toe::clear_board()
 {
-    pegs = {" "," "," "," "," "," "," "," "," "};
+    for (int i = 0; i < pegs.size(); i++)
+    {
+        pegs[i] = " ";
+    }
 }
 
 //friend

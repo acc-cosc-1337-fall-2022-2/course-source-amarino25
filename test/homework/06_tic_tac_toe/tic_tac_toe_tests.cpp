@@ -14,28 +14,20 @@ TEST_CASE("Test game over if nine slots selected")
 	game->start_game("X");
 
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(4);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(7);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(6);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(9);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(8);
 
@@ -63,16 +55,12 @@ TEST_CASE("Test first column winner")
 	game->start_game("X");
 
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(4);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(7);
 
@@ -87,16 +75,12 @@ TEST_CASE("Test second column winner")
 	game->start_game("X");
 
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(8);
 
@@ -110,16 +94,12 @@ TEST_CASE("Test third column winner")
 	game->start_game("X");
 
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(6);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(9);
 
@@ -133,16 +113,12 @@ TEST_CASE("Test first row winner")
 	game->start_game("X");
 
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(4);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(3);
 
@@ -156,16 +132,12 @@ TEST_CASE("Test second row winner")
 	game->start_game("X");
 
 	game->mark_board(4);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(6);
 
@@ -179,16 +151,12 @@ TEST_CASE("Test third row winner")
 	game->start_game("X");
 
 	game->mark_board(7);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(8);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(9);
 
@@ -202,16 +170,12 @@ TEST_CASE("Test top left diagonal winner")
 	game->start_game("X");
 
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(9);
 
@@ -225,16 +189,12 @@ TEST_CASE("Test bottom left diagonal winner")
 	game->start_game("X");
 
 	game->mark_board(3);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(1);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(5);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(2);
-	game->game_over();
 	REQUIRE(game->game_over()==false);
 	game->mark_board(7);
 
