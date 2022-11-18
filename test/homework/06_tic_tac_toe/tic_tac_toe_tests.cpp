@@ -271,7 +271,7 @@ TEST_CASE("Test TicTacToe Manager get winner")
 	REQUIRE(o==1);
 	REQUIRE(t==1);
 }
-TEST_CASE("Test first column winner")
+TEST_CASE("Test first column winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -295,7 +295,7 @@ TEST_CASE("Test first column winner")
 
 }
 
-TEST_CASE("Test second column winner")
+TEST_CASE("Test second column winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -318,7 +318,7 @@ TEST_CASE("Test second column winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test third column winner")
+TEST_CASE("Test third column winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -341,7 +341,7 @@ TEST_CASE("Test third column winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test fourth column winner")
+TEST_CASE("Test fourth column winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -363,7 +363,7 @@ TEST_CASE("Test fourth column winner")
 	REQUIRE(game->game_over()==true);
 	REQUIRE(game->get_winner() == "X");
 }
-TEST_CASE("Test first row winner")
+TEST_CASE("Test first row winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -386,9 +386,9 @@ TEST_CASE("Test first row winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test second row winner")
+TEST_CASE("Test second row winner for Test case 4")
 {
-	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_3>();
+	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
 
 	game->mark_board(5);
@@ -409,9 +409,9 @@ TEST_CASE("Test second row winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test third row winner")
+TEST_CASE("Test third row winner for Test case 4")
 {
-	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_3>();
+	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
 
 	game->mark_board(9);
@@ -432,7 +432,7 @@ TEST_CASE("Test third row winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test fourth row winner")
+TEST_CASE("Test fourth row winner for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
@@ -455,9 +455,9 @@ TEST_CASE("Test fourth row winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test top left diagonal winner")
+TEST_CASE("Test top left diagonal winner for Test case 4")
 {
-	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_3>();
+	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_4>();
 	game->start_game("X");
 
 	game->mark_board(1);
@@ -478,7 +478,7 @@ TEST_CASE("Test top left diagonal winner")
 	REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test bottom left diagonal winner")
+TEST_CASE("Test bottom left diagonal winner for Test case 4 for Test case 4")
 {
 	std::unique_ptr<tic_tac_toe> game = std::make_unique<Tic_Tac_Toe_3>();
 	game->start_game("X");
