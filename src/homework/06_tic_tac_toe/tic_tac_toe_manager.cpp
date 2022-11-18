@@ -12,8 +12,7 @@ using std::cin;
 void TicTacToeManager::save_game(std::unique_ptr<tic_tac_toe>& b)
 {
     update_winner_count(b->get_winner());
-    games.emplace_back();
-    games.back() = std::move(b);
+    games.push_back(std::move(b));
 }
 
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
