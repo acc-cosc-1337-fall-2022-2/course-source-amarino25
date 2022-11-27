@@ -170,3 +170,8 @@ std::istream& operator>>(std::istream& in, tic_tac_toe& game)
 
     return in;
 }
+
+std::vector<std::string> tic_tac_toe::get_pegs() const
+{
+    return pegs;
+}
