@@ -19,7 +19,9 @@ class tic_tac_toe
     void mark_board(int position);
     std::string get_player()const;
     std::string get_winner();
+    std::vector<std::string>get_pegs() const;
     tic_tac_toe(int size);
+    tic_tac_toe(std::vector<std::string> p, std::string win):pegs(p){ winner= win;}
 
     protected:
     std::vector<std::string> pegs;

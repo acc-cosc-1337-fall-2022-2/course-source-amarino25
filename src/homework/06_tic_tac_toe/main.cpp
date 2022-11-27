@@ -12,8 +12,9 @@ using std::cin;
 int main() 
 {
 	
+	Tic_Tac_Toe_data data;
 	std::unique_ptr<tic_tac_toe> game;
-	TicTacToeManager manager;
+	TicTacToeManager manager(data);
 	string first_player;
 	bool loop_again = true;
 	int position;
